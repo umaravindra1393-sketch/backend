@@ -1,0 +1,39 @@
+services:
+  - type: web
+    name: learnx-backend
+    runtime: docker
+    repo: https://github.com/umaravindra1393-sketch/backend.git
+    branch: main
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: FRONTEND_URL
+        sync: false
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        value: "3306"
+      - key: DB_NAME
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: MAIN_ADMIN_EMAIL
+        value: chandubikelover@gmail.com
+      - key: MAIN_ADMIN_PASSWORD
+        value: chandu@123
+      - key: MAIN_ADMIN_NAME
+        value: Chandu Admin
+      - key: DEFAULT_USER_EMAIL
+        value: umaravindra1393@gmail.com
+      - key: DEFAULT_USER_PASSWORD
+        value: uma@123
+      - key: DEFAULT_USER_NAME
+        value: Umara
+      - key: UPLOAD_DIR
+        value: /tmp/learnx-uploads

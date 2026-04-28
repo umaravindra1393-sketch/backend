@@ -30,9 +30,19 @@ The Spring Boot app also loads `.env` values from the project root and the exist
 
 ## Hosted Deployment
 
-- Build command: `./mvnw package -DskipTests`
-- Start command: `java -jar target/learnx-spring-backend-0.0.1-SNAPSHOT.jar`
-- Set `FRONTEND_URL` to the deployed frontend URL.
-- Set database variables to a hosted MySQL-compatible database.
-- Set `UPLOAD_DIR` to a writable runtime path if your hosting provider supports persistent disks.
+### Render
+
+This repo now includes a [render.yaml](D:/Zyndex/spring-backend/render.yaml) and [Dockerfile](D:/Zyndex/spring-backend/Dockerfile) for Render.
+
+1. In Render, create a new `Blueprint` or `Web Service` from this repo.
+2. If you use the blueprint, Render reads `render.yaml` automatically.
+3. Set these environment variables in Render:
+   - `FRONTEND_URL` to your deployed frontend URL
+   - `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD`
+   - `JWT_SECRET`
+4. Keep `PORT=10000` unless you have a specific reason to change it.
+
+Notes:
+- This backend expects a hosted MySQL-compatible database. Do not use your local laptop MySQL for Render.
+- `UPLOAD_DIR` is set to `/tmp/learnx-uploads` by default for Render. That storage is ephemeral, so uploaded files are not permanent unless you later move them to persistent storage.
 
