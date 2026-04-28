@@ -18,7 +18,7 @@ class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins(properties.frontendUrl())
+                .allowedOriginPatterns(properties.frontendUrl(), "http://localhost:*", "http://127.0.0.1:*")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
@@ -30,3 +30,4 @@ class WebConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/uploads/**").addResourceLocations(uploadLocation);
     }
 }
+

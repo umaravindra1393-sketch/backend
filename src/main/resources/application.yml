@@ -3,8 +3,8 @@ spring:
     name: zyndex-spring-backend
   datasource:
     url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:zyndex_db}?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
-    username: ${DB_USER:root}
-    password: ${DB_PASSWORD:}
+    username: root
+    password: Ravindra@1393
   servlet:
     multipart:
       max-file-size: 25MB

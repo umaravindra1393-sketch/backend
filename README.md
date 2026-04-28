@@ -1,6 +1,6 @@
-# Zyndex Spring Boot Backend
+# Learnx Spring Boot Backend
 
-This is the Spring Boot backend for Zyndex. It mirrors the existing `/api` endpoints and uses the same default MySQL settings as the previous backend.
+This is the Spring Boot backend for Learnx. It mirrors the existing `/api` endpoints and uses the same default MySQL settings as the previous backend.
 
 ## Run
 
@@ -31,7 +31,8 @@ The Spring Boot app also loads `.env` values from the project root and the exist
 ## Hosted Deployment
 
 - Build command: `./mvnw package -DskipTests`
-- Start command: `java -jar target/zyndex-spring-backend-0.0.1-SNAPSHOT.jar`
+- Start command: `java -jar target/learnx-spring-backend-0.0.1-SNAPSHOT.jar`
 - Set `FRONTEND_URL` to the deployed frontend URL.
 - Set database variables to a hosted MySQL-compatible database.
 - Set `UPLOAD_DIR` to a writable runtime path if your hosting provider supports persistent disks.
+
